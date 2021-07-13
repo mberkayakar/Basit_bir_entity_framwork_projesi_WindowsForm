@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbEntityDenemesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ders">
+          <Key>
+            <PropertyRef Name="dersinumarası" />
+          </Key>
+          <Property Name="dersinumarası" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dersisim" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Notlar">
+          <Key>
+            <PropertyRef Name="notid" />
+          </Key>
+          <Property Name="notid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ogrencino" Type="int" />
+          <Property Name="dersno" Type="int" />
+          <Property Name="sinav1" Type="smallint" />
+          <Property Name="sinav2" Type="smallint" />
+          <Property Name="sinav3" Type="smallint" />
+          <Property Name="ortalama" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="durum" Type="bit" />
+        </EntityType>
+        <EntityType Name="OgrenciTablosu">
+          <Key>
+            <PropertyRef Name="ogrencinumara" />
+          </Key>
+          <Property Name="ogrencinumara" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ogrenciisim" Type="nvarchar" MaxLength="50" />
+          <Property Name="ogrencisoyisim" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Notlar_Ders">
+          <End Role="Ders" Type="Self.Ders" Multiplicity="0..1" />
+          <End Role="Notlar" Type="Self.Notlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ders">
+              <PropertyRef Name="dersinumarası" />
+            </Principal>
+            <Dependent Role="Notlar">
+              <PropertyRef Name="dersno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notlar_OgrenciTablosu">
+          <End Role="OgrenciTablosu" Type="Self.OgrenciTablosu" Multiplicity="0..1" />
+          <End Role="Notlar" Type="Self.Notlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OgrenciTablosu">
+              <PropertyRef Name="ogrencinumara" />
+            </Principal>
+            <Dependent Role="Notlar">
+              <PropertyRef Name="ogrencino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbEntityDenemesiModelStoreContainer">
+          <EntitySet Name="Ders" EntityType="Self.Ders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notlar" EntityType="Self.Notlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OgrenciTablosu" EntityType="Self.OgrenciTablosu" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Notlar_Ders" Association="Self.FK_Notlar_Ders">
+            <End Role="Ders" EntitySet="Ders" />
+            <End Role="Notlar" EntitySet="Notlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notlar_OgrenciTablosu" Association="Self.FK_Notlar_OgrenciTablosu">
+            <End Role="OgrenciTablosu" EntitySet="OgrenciTablosu" />
+            <End Role="Notlar" EntitySet="Notlar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbEntityDenemesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Der">
+          <Key>
+            <PropertyRef Name="dersinumarası" />
+          </Key>
+          <Property Name="dersinumarası" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dersisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Notlars" Relationship="Self.FK_Notlar_Ders" FromRole="Ders" ToRole="Notlar" />
+        </EntityType>
+        <EntityType Name="Notlar">
+          <Key>
+            <PropertyRef Name="notid" />
+          </Key>
+          <Property Name="notid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogrencino" Type="Int32" />
+          <Property Name="dersno" Type="Int32" />
+          <Property Name="sinav1" Type="Int16" />
+          <Property Name="sinav2" Type="Int16" />
+          <Property Name="sinav3" Type="Int16" />
+          <Property Name="ortalama" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="durum" Type="Boolean" />
+          <NavigationProperty Name="Der" Relationship="Self.FK_Notlar_Ders" FromRole="Notlar" ToRole="Ders" />
+          <NavigationProperty Name="OgrenciTablosu" Relationship="Self.FK_Notlar_OgrenciTablosu" FromRole="Notlar" ToRole="OgrenciTablosu" />
+        </EntityType>
+        <EntityType Name="OgrenciTablosu">
+          <Key>
+            <PropertyRef Name="ogrencinumara" />
+          </Key>
+          <Property Name="ogrencinumara" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogrenciisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ogrencisoyisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Notlars" Relationship="Self.FK_Notlar_OgrenciTablosu" FromRole="OgrenciTablosu" ToRole="Notlar" />
+        </EntityType>
+        <Association Name="FK_Notlar_Ders">
+          <End Role="Ders" Type="Self.Der" Multiplicity="0..1" />
+          <End Role="Notlar" Type="Self.Notlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ders">
+              <PropertyRef Name="dersinumarası" />
+            </Principal>
+            <Dependent Role="Notlar">
+              <PropertyRef Name="dersno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notlar_OgrenciTablosu">
+          <End Role="OgrenciTablosu" Type="Self.OgrenciTablosu" Multiplicity="0..1" />
+          <End Role="Notlar" Type="Self.Notlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OgrenciTablosu">
+              <PropertyRef Name="ogrencinumara" />
+            </Principal>
+            <Dependent Role="Notlar">
+              <PropertyRef Name="ogrencino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbEntityDenemesiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ders" EntityType="Self.Der" />
+          <EntitySet Name="Notlars" EntityType="Self.Notlar" />
+          <EntitySet Name="OgrenciTablosus" EntityType="Self.OgrenciTablosu" />
+          <AssociationSet Name="FK_Notlar_Ders" Association="Self.FK_Notlar_Ders">
+            <End Role="Ders" EntitySet="Ders" />
+            <End Role="Notlar" EntitySet="Notlars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notlar_OgrenciTablosu" Association="Self.FK_Notlar_OgrenciTablosu">
+            <End Role="OgrenciTablosu" EntitySet="OgrenciTablosus" />
+            <End Role="Notlar" EntitySet="Notlars" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbEntityDenemesiModelStoreContainer" CdmEntityContainer="DbEntityDenemesiEntities">
+          <EntitySetMapping Name="Ders">
+            <EntityTypeMapping TypeName="DbEntityDenemesiModel.Der">
+              <MappingFragment StoreEntitySet="Ders">
+                <ScalarProperty Name="dersinumarası" ColumnName="dersinumarası" />
+                <ScalarProperty Name="dersisim" ColumnName="dersisim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notlars">
+            <EntityTypeMapping TypeName="DbEntityDenemesiModel.Notlar">
+              <MappingFragment StoreEntitySet="Notlar">
+                <ScalarProperty Name="notid" ColumnName="notid" />
+                <ScalarProperty Name="ogrencino" ColumnName="ogrencino" />
+                <ScalarProperty Name="dersno" ColumnName="dersno" />
+                <ScalarProperty Name="sinav1" ColumnName="sinav1" />
+                <ScalarProperty Name="sinav2" ColumnName="sinav2" />
+                <ScalarProperty Name="sinav3" ColumnName="sinav3" />
+                <ScalarProperty Name="ortalama" ColumnName="ortalama" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OgrenciTablosus">
+            <EntityTypeMapping TypeName="DbEntityDenemesiModel.OgrenciTablosu">
+              <MappingFragment StoreEntitySet="OgrenciTablosu">
+                <ScalarProperty Name="ogrencinumara" ColumnName="ogrencinumara" />
+                <ScalarProperty Name="ogrenciisim" ColumnName="ogrenciisim" />
+                <ScalarProperty Name="ogrencisoyisim" ColumnName="ogrencisoyisim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
