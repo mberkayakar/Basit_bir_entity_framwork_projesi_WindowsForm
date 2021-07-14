@@ -1,0 +1,15 @@
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

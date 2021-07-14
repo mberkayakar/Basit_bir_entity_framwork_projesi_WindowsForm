@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbEntityDenemesiModelStoreContainer" CdmEntityContainer="DbEntityDenemesiEntities">
+    <EntitySetMapping Name="Ders">
+      <EntityTypeMapping TypeName="DbEntityDenemesiModel.Der">
+        <MappingFragment StoreEntitySet="Ders">
+          <ScalarProperty Name="dersinumarası" ColumnName="dersinumarası" />
+          <ScalarProperty Name="dersisim" ColumnName="dersisim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notlars">
+      <EntityTypeMapping TypeName="DbEntityDenemesiModel.Notlar">
+        <MappingFragment StoreEntitySet="Notlar">
+          <ScalarProperty Name="notid" ColumnName="notid" />
+          <ScalarProperty Name="ogrencino" ColumnName="ogrencino" />
+          <ScalarProperty Name="dersno" ColumnName="dersno" />
+          <ScalarProperty Name="sinav1" ColumnName="sinav1" />
+          <ScalarProperty Name="sinav2" ColumnName="sinav2" />
+          <ScalarProperty Name="sinav3" ColumnName="sinav3" />
+          <ScalarProperty Name="ortalama" ColumnName="ortalama" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OgrenciTablosus">
+      <EntityTypeMapping TypeName="DbEntityDenemesiModel.OgrenciTablosu">
+        <MappingFragment StoreEntitySet="OgrenciTablosu">
+          <ScalarProperty Name="ogrencinumara" ColumnName="ogrencinumara" />
+          <ScalarProperty Name="ogrenciisim" ColumnName="ogrenciisim" />
+          <ScalarProperty Name="ogrencisoyisim" ColumnName="ogrencisoyisim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbEntityDenemesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Der">
+    <Key>
+      <PropertyRef Name="dersinumarası" />
+    </Key>
+    <Property Name="dersinumarası" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dersisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Notlars" Relationship="Self.FK_Notlar_Ders" FromRole="Ders" ToRole="Notlar" />
+  </EntityType>
+  <EntityType Name="Notlar">
+    <Key>
+      <PropertyRef Name="notid" />
+    </Key>
+    <Property Name="notid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrencino" Type="Int32" />
+    <Property Name="dersno" Type="Int32" />
+    <Property Name="sinav1" Type="Int16" />
+    <Property Name="sinav2" Type="Int16" />
+    <Property Name="sinav3" Type="Int16" />
+    <Property Name="ortalama" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="durum" Type="Boolean" />
+    <NavigationProperty Name="Der" Relationship="Self.FK_Notlar_Ders" FromRole="Notlar" ToRole="Ders" />
+    <NavigationProperty Name="OgrenciTablosu" Relationship="Self.FK_Notlar_OgrenciTablosu" FromRole="Notlar" ToRole="OgrenciTablosu" />
+  </EntityType>
+  <EntityType Name="OgrenciTablosu">
+    <Key>
+      <PropertyRef Name="ogrencinumara" />
+    </Key>
+    <Property Name="ogrencinumara" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrenciisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ogrencisoyisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Notlars" Relationship="Self.FK_Notlar_OgrenciTablosu" FromRole="OgrenciTablosu" ToRole="Notlar" />
+  </EntityType>
+  <Association Name="FK_Notlar_Ders">
+    <End Role="Ders" Type="Self.Der" Multiplicity="0..1" />
+    <End Role="Notlar" Type="Self.Notlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ders">
+        <PropertyRef Name="dersinumarası" />
+      </Principal>
+      <Dependent Role="Notlar">
+        <PropertyRef Name="dersno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notlar_OgrenciTablosu">
+    <End Role="OgrenciTablosu" Type="Self.OgrenciTablosu" Multiplicity="0..1" />
+    <End Role="Notlar" Type="Self.Notlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OgrenciTablosu">
+        <PropertyRef Name="ogrencinumara" />
+      </Principal>
+      <Dependent Role="Notlar">
+        <PropertyRef Name="ogrencino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbEntityDenemesiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ders" EntityType="Self.Der" />
+    <EntitySet Name="Notlars" EntityType="Self.Notlar" />
+    <EntitySet Name="OgrenciTablosus" EntityType="Self.OgrenciTablosu" />
+    <AssociationSet Name="FK_Notlar_Ders" Association="Self.FK_Notlar_Ders">
+      <End Role="Ders" EntitySet="Ders" />
+      <End Role="Notlar" EntitySet="Notlars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notlar_OgrenciTablosu" Association="Self.FK_Notlar_OgrenciTablosu">
+      <End Role="OgrenciTablosu" EntitySet="OgrenciTablosus" />
+      <End Role="Notlar" EntitySet="Notlars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
