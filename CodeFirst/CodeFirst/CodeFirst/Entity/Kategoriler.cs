@@ -12,5 +12,6 @@ namespace CodeFirst.Entity
         [Key]
         public int İD { get; set; }
         public int Kategoriadı { get; set; }
+        public ICollection<Urunler>  Urunlers { get; set; }
     }
 }

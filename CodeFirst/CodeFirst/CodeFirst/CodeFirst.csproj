@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Entity\Kategoriler.cs" />
     <Compile Include="Entity\Context.cs" />
+    <Compile Include="Entity\musteri.cs" />
     <Compile Include="Entity\Urunler.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -69,6 +70,22 @@
     <Compile Include="Migrations\202107230912474_InitialCreate.designer.cs">
       <DependentUpon>202107230912474_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107231106260_createMusterisTable.cs" />
+    <Compile Include="Migrations\202107231106260_createMusterisTable.designer.cs">
+      <DependentUpon>202107231106260_createMusterisTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107231109106_updateMusterisTable.cs" />
+    <Compile Include="Migrations\202107231109106_updateMusterisTable.designer.cs">
+      <DependentUpon>202107231109106_updateMusterisTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107231119237_updateMusterisTable1.cs" />
+    <Compile Include="Migrations\202107231119237_updateMusterisTable1.designer.cs">
+      <DependentUpon>202107231119237_updateMusterisTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107231123003_updateMusterisTable2.cs" />
+    <Compile Include="Migrations\202107231123003_updateMusterisTable2.designer.cs">
+      <DependentUpon>202107231123003_updateMusterisTable2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +94,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107230912474_InitialCreate.resx">
       <DependentUpon>202107230912474_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107231106260_createMusterisTable.resx">
+      <DependentUpon>202107231106260_createMusterisTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107231109106_updateMusterisTable.resx">
+      <DependentUpon>202107231109106_updateMusterisTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107231119237_updateMusterisTable1.resx">
+      <DependentUpon>202107231119237_updateMusterisTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107231123003_updateMusterisTable2.resx">
+      <DependentUpon>202107231123003_updateMusterisTable2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

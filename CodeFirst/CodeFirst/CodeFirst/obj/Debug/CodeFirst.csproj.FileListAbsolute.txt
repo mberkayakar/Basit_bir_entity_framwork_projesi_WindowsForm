@@ -14,3 +14,6 @@ C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsF
 C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\CodeFirst\CodeFirst\CodeFirst\obj\Debug\CodeFirst.exe
 C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\CodeFirst\CodeFirst\CodeFirst\obj\Debug\CodeFirst.pdb
 C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\CodeFirst\CodeFirst\CodeFirst\obj\Debug\CodeFirst.Migrations.InitialCreate.resources
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\CodeFirst\CodeFirst\CodeFirst\obj\Debug\CodeFirst.Migrations.createMusterisTable.resources
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\CodeFirst\CodeFirst\CodeFirst\obj\Debug\CodeFirst.Migrations.updateMusterisTable.resources
+C:\Users\Muhammed Berkay AKAR\Desktop\Basit_bir_entity_framwork_projesi_WindowsForm\CodeFirst\CodeFirst\CodeFirst\obj\Debug\CodeFirst.Migrations.updateMusterisTable1.resources

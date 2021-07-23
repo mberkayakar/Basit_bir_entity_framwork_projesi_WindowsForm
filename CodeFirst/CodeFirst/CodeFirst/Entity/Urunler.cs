@@ -12,8 +12,9 @@ namespace CodeFirst.Entity
         [Key]
         public int İd { get; set; }
         public string Urunad { get; set; }
-        public string marka { get; set; }
-        public string kategori { get; set; }
+        public string urunmarka { get; set; }
+        public string urunkategori { get; set; }
         public int stok { get; set; }
+        public Kategoriler kategori  { get; set; }
     }
 }
